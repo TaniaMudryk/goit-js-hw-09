@@ -1,6 +1,7 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const formRef = document.querySelector('.form');
+const createPromBtn = document.querySelector('.submit');
 
 formRef.addEventListener('submit', onSubmitForm);
 
@@ -19,6 +20,7 @@ function onSubmitForm(e) {
       });
     delay += Number(formRef.step.value);
   }
+  createPromBtn.disabled = true;
 }
 
 function createPromise(position, delay) {
